@@ -1,9 +1,9 @@
-export const About = () => {
+export const Services = () => {
   return (
-    <div id="about" class="mx-auto pt-24 max-w-7xl px-6 sm:mt-40 lg:px-8">
+    <div id="services" class="mx-auto pt-24 max-w-7xl px-6 sm:mt-40 lg:px-8">
       <div class="mx-auto max-w-2xl lg:mx-0">
         <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          عن الشركة
+          الخدمات
         </h2>
         <p class="mt-6 text-lg leading-8 text-gray-600">
           شركة أوشن فيو العقارية هي شركة رائدة في مجال العقارات، وتعتبر وجهة

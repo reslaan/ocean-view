@@ -1,9 +1,20 @@
 import logo from "../assets/logo.png";
+
+export const menu = [
+  { key: "اتصل بنا", id: "contact" },
+  { key: "لماذا نحن؟", id: "whyUs" },
+  { key: "الخدمات", id: "services" },
+  { key: "عن الشركة", id: "about" },
+  { key: "الرئيسية", id: "main" },
+];
 export const Header = () => {
   return (
-    <header dir="ltr" class="top-0 sticky bg-teal-400 ">
+    <header
+      dir="ltr"
+      class="top-0 sticky bg-gray-100  border border-b border-gray-200 shadow-md "
+    >
       <nav
-        class="flex items-center justify-between p-6 lg:px-8 container mx-auto text-3xl max-w-7xl"
+        class="flex items-center justify-between lg:px-8 container mx-auto text-3xl max-w-7xl"
         aria-label="Global"
       >
         <div class="flex lg:flex-1 ">
@@ -37,18 +48,16 @@ export const Header = () => {
           </button>
         </div>
         <div class="hidden lg:flex lg:gap-x-12 text-xl">
-          <a href="#" class=" font-semibold leading-6 text-gray-900">
-            اتصل بنا
-          </a>
-          <a href="#" class=" font-semibold leading-6 text-gray-900">
-            الخدمات
-          </a>
-          <a href="#" class=" font-semibold leading-6 text-gray-900">
-            عنن الشركة
-          </a>
-          <a href="#" class=" font-semibold leading-6 text-gray-900">
-            الرئيسية
-          </a>
+          {menu.map((item) => {
+            return (
+              <a
+                href={"#" + item.id}
+                class=" font-semibold leading-6 text-gray-800 hover:text-gray-500 hover:-translate-y-px "
+              >
+                {item.key}{" "}
+              </a>
+            );
+          })}
         </div>
       </nav>
       <div class="lg:hidden" role="dialog" aria-modal="true">

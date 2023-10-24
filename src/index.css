@@ -7,3 +7,45 @@ body {
   font-family: Poppins;
 }
 
+
+@keyframes moveToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-40%);
+  }
+
+  60% {
+    transform: translateX(5%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(40%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.main{
+  background-image:  linear-gradient( to right bottom, rgba(45, 135, 163, 0.63), rgba(34, 112, 138, 0.623)), url(./assets/background.png);
+  background-size: cover;
+  background-position: top;
+  /* clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); */
+}
+.main-title {
+  animation: moveToLeft 3s;
+}
+.sub-title {
+  animation: moveToRight 3s;
+}
+
