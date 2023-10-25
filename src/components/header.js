@@ -11,7 +11,7 @@ export const Header = () => {
   return (
     <header
       dir="ltr"
-      class="top-0 sticky bg-gray-100  border border-b border-gray-200 shadow-md "
+      class="top-0 sticky z-10 bg-gray-100  border border-b border-gray-200 shadow-md "
     >
       <nav
         class="flex items-center justify-between lg:px-8 container mx-auto text-3xl max-w-7xl"

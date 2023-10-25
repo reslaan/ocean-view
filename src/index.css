@@ -40,7 +40,7 @@ body {
   background-image:  linear-gradient( to right bottom, rgba(45, 135, 163, 0.63), rgba(34, 112, 138, 0.623)), url(./assets/background.png);
   background-size: cover;
   background-position: top;
-  /* clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); */
+  /* clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%); */
 }
 .main-title {
   animation: moveToLeft 3s;
