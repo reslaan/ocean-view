@@ -25,7 +25,7 @@ export const About = () => {
           موثوقة للعملاء الذين يبحثون عن خدمات عقارية محترفة عالية الجودة.
         </p>
       </div>
-      <dl class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-md leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+      <dl class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-xl leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
         <div>
           <dt class="font-semibold text-gray-900">التأسيس</dt>
           <dd class="mt-1 text-gray-600">

@@ -39,7 +39,7 @@ export const Footer = () => {
     <footer id="contact" class=" text-gray-400 pt-20">
       <div class="mx-auto w-full bg-gray-900 overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
         <nav class="flex justify-center gap-x-12" aria-label="Footer">
-          {menu.map((item) => {
+          {[...menu].reverse().map((item) => {
             return (
               <a
                 href={"#" + item.id}

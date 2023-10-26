@@ -1,3 +1,4 @@
+import { useState } from "react";
 import logo from "../assets/logo.png";
 
 export const menu = [
@@ -8,13 +9,14 @@ export const menu = [
   { key: "الرئيسية", id: "main" },
 ];
 export const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <header
       dir="ltr"
       class="top-0 sticky z-10 bg-gray-100  border border-b border-gray-200 shadow-md "
     >
       <nav
-        class="flex items-center justify-between lg:px-8 container mx-auto text-3xl max-w-7xl"
+        class="flex items-center justify-between px-3 lg:px-8 container mx-auto text-3xl max-w-7xl"
         aria-label="Global"
       >
         <div class="flex lg:flex-1 ">
@@ -29,6 +31,9 @@ export const Header = () => {
           <button
             type="button"
             class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            onClick={() => {
+              setIsOpen((prev) => !prev);
+            }}
           >
             <span class="sr-only">Open main menu</span>
             <svg
@@ -52,7 +57,7 @@ export const Header = () => {
             return (
               <a
                 href={"#" + item.id}
-                class=" font-semibold leading-6 text-gray-800 hover:text-gray-500 hover:-translate-y-px "
+                class=" font-semibold leading-6 text-gray-800 hover:text-gray-500 hover:-translate-y-px active:translate-y-0"
               >
                 {item.key}{" "}
               </a>
@@ -60,72 +65,55 @@ export const Header = () => {
           })}
         </div>
       </nav>
-      <div class="lg:hidden" role="dialog" aria-modal="true">
-        <div class="fixed inset-0 z-10"></div>
-        <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div class="flex items-center justify-between">
-            <a href="#" class="-m-1.5 p-1.5">
-              <span class="sr-only">Your Company</span>
-              {/* <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt=""> */}
-            </a>
-            <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-              <span class="sr-only">Close menu</span>
-              <svg
-                class="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
+      {isOpen && (
+        <div role="dialog" aria-modal="true" className="relative">
+          <div class="fixed inset-0 z-10"></div>
+          <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-xs sm:ring-1 sm:ring-gray-900/10">
+            <div class="flex items-center justify-between">
+              <button
+                type="button"
+                class="-m-2.5  p-2.5 text-gray-700 hover:-translate-y-px active:translate-y-0 hover:bg-red-100 rounded-full"
+                onClick={() => {
+                  setIsOpen((prev) => !prev);
+                }}
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-          <div class="mt-6 flow-root">
-            <div class="-my-6 divide-y divide-gray-500/10">
-              <div class="space-y-2 py-6">
-                <a
-                  href="service"
-                  class="-mx-3 block rounded-lg px-3 py-2  font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                <span class="sr-only">Close menu</span>
+                <svg
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
                 >
-                  Product
-                </a>
-                <a
-                  href="feature"
-                  class="-mx-3 block rounded-lg px-3 py-2  font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Features
-                </a>
-                <a
-                  href="#"
-                  class="-mx-3 block rounded-lg px-3 py-2  font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Marketplace
-                </a>
-                <a
-                  href="#"
-                  class="-mx-3 block rounded-lg px-3 py-2  font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Company
-                </a>
-              </div>
-              <div class="py-6">
-                <a
-                  href="#"
-                  class="-mx-3 block rounded-lg px-3 py-2.5  font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Log in
-                </a>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="mt-6 flow-root " dir="rtl">
+              <div class="my-6 divide-y divide-gray-500/10">
+                <div class="flex flex-col gap-y-2 text-center">
+                  {[...menu].reverse().map((item) => {
+                    return (
+                      <a
+                        href={"#" + item.id}
+                        onClick={() => setIsOpen((prev) => !prev)}
+                        class=" font-semibold leading-6 text-gray-800 hover:text-gray-500 hover:-translate-y-px hover:bg-gray-100 rounded px-2 py-2 transition-all"
+                      >
+                        {item.key}{" "}
+                      </a>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </header>
   );
 };
