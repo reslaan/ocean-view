@@ -1,14 +1,14 @@
-export const HomeIcon = ({ size = 24 }) => {
+export const HomeIcon = ({ size = 50 }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
-      //   viewBox="0 0 24 24"
-      strokeWidth={1.8}
-      stroke="currentColor"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
       width={size}
       height={size}
-      className="w-6 h-6"
+      stroke="currentColor"
+      className={`"w-10 h-10"`}
     >
       <path
         strokeLinecap="round"

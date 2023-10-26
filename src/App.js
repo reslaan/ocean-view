@@ -7,7 +7,7 @@ import { WhyUs } from "./components/why-us";
 
 function App() {
   return (
-    <div dir="rtl" className="h-full text-lg">
+    <div dir="rtl" className="h-full text-lg scroll-smooth">
       <Header></Header>
       <Main></Main>
       <About />

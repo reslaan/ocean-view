@@ -36,8 +36,8 @@ const socialMedia = [
 ];
 export const Footer = () => {
   return (
-    <footer id="contact" class="bg-gray-900 text-gray-400">
-      <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
+    <footer id="contact" class=" text-gray-400 pt-20">
+      <div class="mx-auto w-full bg-gray-900 overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
         <nav class="flex justify-center gap-x-12" aria-label="Footer">
           {menu.map((item) => {
             return (
