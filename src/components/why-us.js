@@ -44,10 +44,6 @@ export const WhyUs = () => {
           <h2 class="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">
             لماذا نحن؟
           </h2>
-          <p class="mt-6 text-lg leading-8 text-gray-300">
-            شركة أوشن فيو العقارية هي شركة رائدة في مجال العقارات، وتعتبر وجهة
-            موثوقة للعملاء الذين يبحثون عن خدمات عقارية محترفة عالية الجودة.
-          </p>
         </div>
         <dl class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-xl leading-7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {list.map((item) => {
